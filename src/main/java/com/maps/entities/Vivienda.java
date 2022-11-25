@@ -14,7 +14,11 @@ public class Vivienda implements Serializable{
 	private Long id;
 	private int piso;
 	private int puerta;
-	private List<String> fotos=new ArrayList<>();
+
+	private String imageName;
+	private String imageUrl;
+	private String imageId;
+
 	private List<String> comentarios=new ArrayList<>();
 
 }
