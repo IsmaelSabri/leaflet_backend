@@ -2,29 +2,18 @@ package com.maps.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import lombok.Getter;
-import lombok.Setter;
 
+import lombok.Data;
 import org.springframework.http.HttpStatus;
 
 import java.util.Date;
-
+@Data
 public class HttpResponse {
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy hh:mm:ss", timezone = "America/New_York")
-	@Getter
-	@Setter
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy hh:mm:ss", timezone = "Spain/Madrid")
 	private Date fecha;
-	@Getter
-	@Setter
 	private int httpStatusCode;
-	@Getter
-	@Setter
 	private HttpStatus httpStatus;
-	@Getter
-	@Setter
 	private String reason;
-	@Getter
-	@Setter
 	private String message;
 
 	public HttpResponse(int httpStatusCode, HttpStatus httpStatus, String reason, String message) {
