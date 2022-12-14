@@ -78,15 +78,10 @@ public class EdificioServiceImpl {
         edificio.setImageName(result.get("original_filename").toString());
         edificio.setImageUrl( result.get("url").toString());
         edificio.setImageId(result.get("public_id").toString());
-        System.out.println(puertas);
         edificio.setPuertas(Integer.parseInt(puertas));
-        System.out.println(numero);
-
         edificio.setDescripcion(descripcion);
         edificio.setCalle(calle);
         edificio.setNumero(Integer.parseInt(numero));
-        System.out.println("dfg");
-
         edificio.setCp(Integer.parseInt(cp));
         edificio.setFechaCreacion(new Date());
         edificio.setValoracion(Integer.parseInt(starRating));
