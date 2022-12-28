@@ -163,6 +163,13 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService {
 		emailService.sendNewPasswordEmail(usuario.getPrimerApellido(), password, usuario.getEmail());
 	}
 
+	/*public Usuario updateLastView(String username, String lastView){
+		Usuario aux=usuarioRepository.findUsuarioByUsername(username);
+		aux.setLastView(lastView);
+		usuarioRepository.save(aux);
+		return aux;
+	}*/
+
 	@Override
 	public Usuario updateProfileImage(String username, MultipartFile profileImage) throws UserNotFoundException,
 			UsernameExistException, EmailExistException, IOException, NotAnImageFileException {
