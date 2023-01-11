@@ -20,11 +20,11 @@ import static com.maps.constant.SecurityConstant.*;
 
 @Component
 public class JwtAuthorizationFilter extends OncePerRequestFilter {
-	private JWTTokenProvider jwtTokenProvider;
+	//private JWTTokenProvider jwtTokenProvider;
 
-	public JwtAuthorizationFilter(JWTTokenProvider jwtTokenProvider) {
+	/*public JwtAuthorizationFilter(JWTTokenProvider jwtTokenProvider) {
 		this.jwtTokenProvider = jwtTokenProvider;
-	}
+	}*/
 
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
@@ -38,7 +38,7 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
 				return;
 			}
 			String token = authorizationHeader.substring(TOKEN_PREFIX.length());
-			String username = jwtTokenProvider.getSubject(token);
+			/*String username = jwtTokenProvider.getSubject(token);
 			if (jwtTokenProvider.isTokenValid(username, token)
 					&& SecurityContextHolder.getContext().getAuthentication() == null) {
 				List<GrantedAuthority> authorities = jwtTokenProvider.getAuthorities(token);
@@ -46,7 +46,7 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
 				SecurityContextHolder.getContext().setAuthentication(authentication);
 			} else {
 				SecurityContextHolder.clearContext();
-			}
+			}*/
 		}
 		filterChain.doFilter(request, response);
 	}
